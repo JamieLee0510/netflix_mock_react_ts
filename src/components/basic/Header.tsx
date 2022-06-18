@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
-import { ReactComponent as PlayLogo } from "../../static/images/play-button.svg";
-import { ReactComponent as AddLogo } from "../../static/images/add.svg";
+import PlayLogo from "../../static/images/play-button.svg";
+// import { ReactComponent as AddLogo } from "../../static/images/add.svg";
+import AddLogo from "../../static/images/add.svg";
 import { ReactComponent as MuteIcon } from "../../static/images/mute.svg";
 import { ReactComponent as UnmuteIcon } from "../../static/images/unmute.svg";
 import ReactPlayer from "react-player";
 import { IMovie } from "../../utils/const";
 
 interface Props {
-  movie: IMovie;
+  // movie: IMovie;
 }
 
-const Header = ({ movie: { name, overview } }: Props) => {
+const Header: React.FC<Props> = ({}: Props) => {
   const [isMuted, setIsMuted] = useState(true);
-
+  let name = "hihi name";
+  let overview = "hihi overview";
   return (
     <header className="header">
       <ReactPlayer
@@ -31,15 +33,21 @@ const Header = ({ movie: { name, overview } }: Props) => {
         onClick={() => alert("not a movie!")}
         className="header__container-btnPlay"
       >
-        <PlayLogo className="header__container-btnMyList-play" />
+        <div className="header__container-btnMyList-play">
+          <PlayLogo />
+        </div>
+        {/* <PlayLogo className="header__container-btnMyList-play" /> */}
         Play
       </button>
       <button className="header__container-btnMyList">
-        <AddLogo className="header__container-btnMyList-add" />
+        <div className="header__container-btnMyList-add">
+          <AddLogo />
+        </div>
+        {/* <AddLogo className="header__container-btnMyList-add" /> */}
         My List
       </button>
 
-      {isMuted ? (
+      {/* {isMuted ? (
         <MuteIcon
           onClick={() => setIsMuted(false)}
           className="header__container-btnVolume"
@@ -49,7 +57,7 @@ const Header = ({ movie: { name, overview } }: Props) => {
           onClick={() => setIsMuted(true)}
           className="header__container-btnVolume"
         />
-      )}
+      )} */}
       <p className="header__container-overview">{overview}</p>
       <div className="header__container--fadeBottom"></div>
     </header>

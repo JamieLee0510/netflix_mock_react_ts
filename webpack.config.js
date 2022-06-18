@@ -9,13 +9,13 @@ var path= require('path')
 
 
 module.exports = () => {
-    // // call dotenv and it will return an Object with a parsed key
-    // const env = dotenv.config().parsed
-    // // reduce env variables to an oject
-    // const envKeys = Object.keys(env).reduce((prev, next) => {
-    //   prev[`process.env.${next}`] = JSON.stringify(env[next])
-    //   return prev
-    // }, {})
+    // call dotenv and it will return an Object with a parsed key
+    const env = dotenv.config().parsed
+    // reduce env variables to an oject
+    const envKeys = Object.keys(env).reduce((prev, next) => {
+      prev[`process.env.${next}`] = JSON.stringify(env[next])
+      return prev
+    }, {})
   
     return {
       entry: './src/index.tsx',
@@ -93,7 +93,7 @@ module.exports = () => {
         global: true,
       },
       plugins: [
-       // new webpack.DefinePlugin(envKeys),
+       new webpack.DefinePlugin(envKeys),
         new HtmlWebPackPlugin({
           template: './src/public/index.html',
           filename: './index.html',
