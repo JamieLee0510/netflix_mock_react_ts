@@ -6,7 +6,6 @@ import AddLogo from "../../static/images/add.svg";
 import MuteIcon from "../../static/images/mute.svg";
 import UnmuteIcon from "../../static/images/unmute.svg";
 import ReactPlayer from "react-player";
-import { IMovie } from "../../utils/const";
 
 interface Props {
   // movie: IMovie;

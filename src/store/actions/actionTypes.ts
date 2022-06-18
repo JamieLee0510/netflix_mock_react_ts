@@ -1,11 +1,7 @@
-import axios from "axios";
-import { type } from "os";
-import { AnyAction, Dispatch } from "redux";
-import { ThunkAction } from "redux-thunk";
-import { RootState } from "../rootStore";
+import { ActMoviesActionType } from "../actMovies/actMoviesAction";
+import { ComedyMoviesActionType } from "../comedyMovies/comedyMoviesAction";
 import { TopRatedActionType } from "../topRate/topRateAction";
 import { TrendingActionType } from "../trending/trendingAction";
-import { AsyncAxiosAction, AxiosAction, MovieResponse } from "./types";
 
 export enum ActionTypes {
   FETCH_TRENDING,
@@ -26,7 +22,11 @@ export enum ActionTypes {
   FETCH_SEARCH_MOVIE_SUCCESS,
 }
 
-export type RootActions = TrendingActionType | TopRatedActionType;
+export type RootActions =
+  | TrendingActionType
+  | TopRatedActionType
+  | ActMoviesActionType
+  | ComedyMoviesActionType;
 
 const media_type = {
   tv: "tv",
