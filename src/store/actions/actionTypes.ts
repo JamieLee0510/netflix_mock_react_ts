@@ -1,6 +1,7 @@
 import { ActMoviesActionType } from "../actMovies/actMoviesAction";
 import { ComedyMoviesActionType } from "../comedyMovies/comedyMoviesAction";
 import { HorrorMoviesActionType } from "../horrorMovies/horrorMoviesAction";
+import { RomanceMoviesActionType } from "../romanceMovies/romanceMoviesAction";
 import { TopRatedActionType } from "../topRate/topRateAction";
 import { TrendingActionType } from "../trending/trendingAction";
 
@@ -28,7 +29,8 @@ export type RootActions =
   | TopRatedActionType
   | ActMoviesActionType
   | ComedyMoviesActionType
-  | HorrorMoviesActionType;
+  | HorrorMoviesActionType
+  | RomanceMoviesActionType;
 
 const media_type = {
   tv: "tv",
