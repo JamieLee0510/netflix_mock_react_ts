@@ -3,11 +3,13 @@ import MainContent from "../components/MainContent";
 
 type Props = {};
 
-export default function Home({}: Props) {
+const Home: React.FC = () => {
   return (
     <div className="main-content">
       {/* <MainContent selectMovieHandler={selectMovieHandler} /> */}
       <MainContent />
     </div>
   );
-}
+};
+
+export default Home;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const dropdownContent: React.FC = () => (
+const DropdownContent: React.FC = () => (
   <div className="dropdownContainer">
     <div className="navigation__container--userLogo">
       <div className="dropdownContent">
@@ -27,4 +27,4 @@ const dropdownContent: React.FC = () => (
   </div>
 );
 
-export default dropdownContent;
+export default DropdownContent;

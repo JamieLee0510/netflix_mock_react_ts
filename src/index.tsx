@@ -6,6 +6,12 @@ import ReduxThunk from "redux-thunk";
 import reducers from "./store/reducers/index";
 
 import AppRouter from "./pages/AppRouter";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// Import main sass file to apply global styles
+import "./static/sass/style.scss";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
