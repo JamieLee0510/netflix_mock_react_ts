@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import PlayLogo from "../../static/images/play-button.svg";
 // import { ReactComponent as AddLogo } from "../../static/images/add.svg";
 import AddLogo from "../../static/images/add.svg";
-import { ReactComponent as MuteIcon } from "../../static/images/mute.svg";
-import { ReactComponent as UnmuteIcon } from "../../static/images/unmute.svg";
+import MuteIcon from "../../static/images/mute.svg";
+import UnmuteIcon from "../../static/images/unmute.svg";
 import ReactPlayer from "react-player";
-import { IMovie } from "../../utils/const";
 
 interface Props {
   // movie: IMovie;
@@ -47,17 +46,29 @@ const Header: React.FC<Props> = ({}: Props) => {
         My List
       </button>
 
-      {/* {isMuted ? (
-        <MuteIcon
+      {isMuted ? (
+        <div
           onClick={() => setIsMuted(false)}
           className="header__container-btnVolume"
-        />
+        >
+          <MuteIcon />
+        </div>
       ) : (
-        <UnmuteIcon
+        // <MuteIcon
+        //   onClick={() => setIsMuted(false)}
+        //   className="header__container-btnVolume"
+        // />
+        <div
           onClick={() => setIsMuted(true)}
           className="header__container-btnVolume"
-        />
-      )} */}
+        >
+          <UnmuteIcon />
+        </div>
+        // <UnmuteIcon
+        //   onClick={() => setIsMuted(true)}
+        //   className="header__container-btnVolume"
+        // />
+      )}
       <p className="header__container-overview">{overview}</p>
       <div className="header__container--fadeBottom"></div>
     </header>

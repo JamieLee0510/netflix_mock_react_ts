@@ -1,21 +1,21 @@
 import { Movie } from "../../model/movie";
 import { ActionTypes } from "../actions/actionTypes";
-import { TrendingActionType } from "./trendingAction";
+import { ActMoviesActionType } from "./actMoviesAction";
 
-export interface TrendingState {
+export interface ActMoviesState {
   movies?: Movie[];
 }
 
-const defaultState: TrendingState = {
+const defaultState: ActMoviesState = {
   movies: [],
 };
 
 export default function (
   state = defaultState,
-  action: TrendingActionType
-): TrendingState {
+  action: ActMoviesActionType
+): ActMoviesState {
   switch (action.type) {
-    case ActionTypes.FETCH_TRENDING:
+    case ActionTypes.FETCH_ACTION_MOVIES:
       const movies = action.payload.data.results;
       return { ...state, movies };
     default:
