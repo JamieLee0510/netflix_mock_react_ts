@@ -1,7 +1,13 @@
 import request from "../../utils/request";
 import { ThunkAction } from "redux-thunk";
 import { RootState } from "../rootStore";
-import { ActionTypes, TrendingActionType } from "../actions/actionTypes";
+import { ActionTypes } from "../actions/actionTypes";
+import { AxiosAction, MovieResponse } from "../actions/types";
+
+export type TrendingActionType = AxiosAction<
+  typeof ActionTypes.FETCH_TRENDING,
+  MovieResponse
+>;
 
 export function fetchTrending(): ThunkAction<
   void,

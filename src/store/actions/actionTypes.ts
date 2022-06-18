@@ -3,6 +3,8 @@ import { type } from "os";
 import { AnyAction, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { RootState } from "../rootStore";
+import { TopRatedActionType } from "../topRate/topRateAction";
+import { TrendingActionType } from "../trending/trendingAction";
 import { AsyncAxiosAction, AxiosAction, MovieResponse } from "./types";
 
 export enum ActionTypes {
@@ -24,12 +26,7 @@ export enum ActionTypes {
   FETCH_SEARCH_MOVIE_SUCCESS,
 }
 
-export type RootActions = TrendingActionType;
-
-export type TrendingActionType = AxiosAction<
-  typeof ActionTypes.FETCH_TRENDING,
-  MovieResponse
->;
+export type RootActions = TrendingActionType | TopRatedActionType;
 
 const media_type = {
   tv: "tv",
