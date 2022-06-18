@@ -1,5 +1,6 @@
 import { fetchActionMovies } from "../actMovies/actMoviesAction";
 import { fetchComedyMovies } from "../comedyMovies/comedyMoviesAction";
+import { fetchDocumentaries } from "../documentary/documentaryAction";
 import { fetchHorrorMovies } from "../horrorMovies/horrorMoviesAction";
 import { fetchRomanceMovies } from "../romanceMovies/romanceMoviesAction";
 import { fetchTopRated } from "../topRate/topRateAction";
@@ -12,4 +13,5 @@ export const movieActions = {
   fetchComedyMovies: fetchComedyMovies,
   fetchHorrorMovies: fetchHorrorMovies,
   fetchRomanceMovies: fetchRomanceMovies,
+  fetchDocumentaries: fetchDocumentaries,
 };

@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import actMoviesReducer from "./actMovies/actMoviesReducer";
 import comedyMoviesReducer from "./comedyMovies/comedyMoviesReducer";
+import documentaryReducer from "./documentary/documentaryReducer";
 import horrorMoviesReducer from "./horrorMovies/horrorMoviesReducer";
 import romanceMoviesReducer from "./romanceMovies/romanceMoviesReducer";
 import topRateReducer from "./topRate/topRateReducer";
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   comedyMovies: comedyMoviesReducer,
   horrorMovies: horrorMoviesReducer,
   romanceMovies: romanceMoviesReducer,
+  documentaries: documentaryReducer,
 });
 
 export default rootReducer;

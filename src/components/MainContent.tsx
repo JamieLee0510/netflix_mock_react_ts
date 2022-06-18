@@ -10,6 +10,7 @@ import { ActMoviesState } from "../store/actMovies/actMoviesReducer";
 import { ComedyMoviesState } from "../store/comedyMovies/comedyMoviesReducer";
 import { HorrorMoviesState } from "../store/horrorMovies/horrorMoviesReducer";
 import { RomanceMoviesState } from "../store/romanceMovies/romanceMoviesReducer";
+import { DocumentaryState } from "../store/documentary/documentaryReducer";
 
 type Props = {
   selectMovieHandler: Function;
@@ -25,11 +26,9 @@ export default function MainContent({ selectMovieHandler }: Props) {
   const topRated = useSelector<RootState, TopRatedState>(
     (state) => state.topRated
   );
-
   const actMovies = useSelector<RootState, ActMoviesState>(
     (state) => state.actionMovies
   );
-
   const comedyMovies = useSelector<RootState, ComedyMoviesState>(
     (state) => state.comedyMovies
   );
@@ -39,6 +38,9 @@ export default function MainContent({ selectMovieHandler }: Props) {
   const romanceMovies = useSelector<RootState, RomanceMoviesState>(
     (state) => state.romanceMovies
   );
+  const documentaries = useSelector<RootState, DocumentaryState>(
+    (state) => state.documentaries
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(movieActions.fetchTrending());
@@ -47,6 +49,7 @@ export default function MainContent({ selectMovieHandler }: Props) {
     dispatch(movieActions.fetchComedyMovies());
     dispatch(movieActions.fetchHorrorMovies());
     dispatch(movieActions.fetchRomanceMovies());
+    dispatch(movieActions.fetchDocumentaries());
   }, [dispatch]);
 
   return (
@@ -82,6 +85,11 @@ export default function MainContent({ selectMovieHandler }: Props) {
           title="Romance"
           selectMovieHandler={selectMovieHandler}
           movies={romanceMovies.movies}
+        />
+        <DisplayMovieRow
+          title="Documentaries"
+          selectMovieHandler={selectMovieHandler}
+          movies={documentaries.movies}
         />
       </div>
     </div>
