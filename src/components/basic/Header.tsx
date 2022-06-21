@@ -35,15 +35,15 @@ const Header: React.FC<Props> = ({}: Props) => {
         <div className="header__container-btnMyList-play">
           <PlayLogo />
         </div>
-        {/* <PlayLogo className="header__container-btnMyList-play" /> */}
+        {/* <PlayLogo className="header__container-btnMyList-play" />  Play*/}
         Play
       </button>
       <button className="header__container-btnMyList">
         <div className="header__container-btnMyList-add">
           <AddLogo />
         </div>
-        {/* <AddLogo className="header__container-btnMyList-add" /> */}
-        My List
+        <div> My List</div>
+        {/* <AddLogo className="header__container-btnMyList-add" />   My List*/}
       </button>
 
       {isMuted ? (
