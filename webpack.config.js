@@ -88,6 +88,7 @@ module.exports = () => {
       devServer: {
         hot: true, // enable HMR on the server
         historyApiFallback: true,
+        port:8081,
       },
       node: {
         global: true,
