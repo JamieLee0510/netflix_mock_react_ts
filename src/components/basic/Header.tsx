@@ -6,15 +6,14 @@ import AddLogo from "../../static/images/add.svg";
 import MuteIcon from "../../static/images/mute.svg";
 import UnmuteIcon from "../../static/images/unmute.svg";
 import ReactPlayer from "react-player";
+import { MovieDetail } from "../../model/movie";
 
-interface Props {
-  // movie: IMovie;
-}
+interface Props extends MovieDetail {}
 
-const Header: React.FC<Props> = ({}: Props) => {
+const Header: React.FC<Props> = ({ name, overview }: Props) => {
   const [isMuted, setIsMuted] = useState(true);
-  let name = "hihi name";
-  let overview = "hihi overview";
+  // let name = "hihi name";
+  // let overview = "hihi overview";
   return (
     <header className="header">
       <ReactPlayer

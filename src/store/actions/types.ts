@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { AnyAction } from "redux";
-import { Movie } from "../../model/movie";
+import { Movie, MovieDetail } from "../../model/movie";
 
 export interface AxiosAction<T, D> extends AnyAction {
   type: T;
@@ -14,3 +14,5 @@ export interface AsyncAxiosAction<T, D> extends AnyAction {
 export interface MovieResponse {
   results: Movie[];
 }
+
+export interface MovieDetailResponse extends MovieDetail {}
