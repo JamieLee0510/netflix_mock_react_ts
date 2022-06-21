@@ -2,6 +2,7 @@ import { ActMoviesActionType } from "../actMovies/actMoviesAction";
 import { ComedyMoviesActionType } from "../comedyMovies/comedyMoviesAction";
 import { DocumentaryActionType } from "../documentary/documentaryAction";
 import { HorrorMoviesActionType } from "../horrorMovies/horrorMoviesAction";
+import { MovieDetailActionType } from "../movieDetail/movieDetailAction";
 import { RomanceMoviesActionType } from "../romanceMovies/romanceMoviesAction";
 import { TopRatedActionType } from "../topRate/topRateAction";
 import { TrendingActionType } from "../trending/trendingAction";
@@ -32,9 +33,5 @@ export type RootActions =
   | ComedyMoviesActionType
   | HorrorMoviesActionType
   | RomanceMoviesActionType
-  | DocumentaryActionType;
-
-const media_type = {
-  tv: "tv",
-  movie: "movie",
-};
+  | DocumentaryActionType
+  | MovieDetailActionType;

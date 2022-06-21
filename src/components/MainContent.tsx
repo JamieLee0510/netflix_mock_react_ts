@@ -11,15 +11,16 @@ import { ComedyMoviesState } from "../store/comedyMovies/comedyMoviesReducer";
 import { HorrorMoviesState } from "../store/horrorMovies/horrorMoviesReducer";
 import { RomanceMoviesState } from "../store/romanceMovies/romanceMoviesReducer";
 import { DocumentaryState } from "../store/documentary/documentaryReducer";
+import { MovieDetailState } from "../store/movieDetail/movieDetailReducer";
 
 type Props = {
   selectMovieHandler: Function;
 };
 
 export default function MainContent({ selectMovieHandler }: Props) {
-  // const { movieDetails } = {
-  //   movieDetails: { name: "hihi", overview: "hgihi" } as IMovie,
-  // };
+  const { movieDetails } = useSelector<RootState, MovieDetailState>(
+    (state) => state.movieDetail
+  );
   const trending = useSelector<RootState, TrendingState>(
     (state) => state.trending
   );
@@ -43,6 +44,7 @@ export default function MainContent({ selectMovieHandler }: Props) {
   );
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(movieActions.fetchMovieDetails("tv", "63351"));
     dispatch(movieActions.fetchTrending());
     dispatch(movieActions.fetchTopRated());
     dispatch(movieActions.fetchActionMovies());
@@ -54,7 +56,8 @@ export default function MainContent({ selectMovieHandler }: Props) {
 
   return (
     <div className="container">
-      <Header />
+      <Header name={movieDetails.name} overview={movieDetails.overview} />
+
       <div className="movieShowcase">
         <DisplayMovieRow
           title="Trending"
