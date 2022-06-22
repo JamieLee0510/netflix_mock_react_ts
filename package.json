@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.0",
     "axios": "^0.27.2",
+    "enzyme": "^3.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.10.1",
@@ -23,7 +24,7 @@
     "dev": "webpack-dev-server --mode development --config webpack.config.js --open",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +50,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
+    "@types/enzyme": "^3.10.12",
     "@types/jest": "^27.5.2",
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.13",
