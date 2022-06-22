@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MainContent from "../components/MainContent";
 import { Movie, MovieDetail } from "../model/movie";
 import Modal from "../components/BasicModel";
-import ModalMovieDetails from "../components/ModelMovieDetail";
+import ModalMovieDetails from "../components/ModalMovieDetail";
 
 type Props = {};
 

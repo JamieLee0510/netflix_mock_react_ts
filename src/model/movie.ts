@@ -2,6 +2,8 @@ export interface Movie {
   poster_path: string;
   backdrop_path: string;
   title: string;
+  id: string;
+  media_type: string;
 }
 
 export interface MovieDetail {

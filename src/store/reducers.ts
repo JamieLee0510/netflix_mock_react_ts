@@ -5,6 +5,7 @@ import documentaryReducer from "./documentary/documentaryReducer";
 import horrorMoviesReducer from "./horrorMovies/horrorMoviesReducer";
 import movieDetailReducer from "./movieDetail/movieDetailReducer";
 import romanceMoviesReducer from "./romanceMovies/romanceMoviesReducer";
+import searchMovieReducer from "./searchMovie/searchMovieReducer";
 import topRateReducer from "./topRate/topRateReducer";
 import TrendingReducer from "./trending/trendingReducer";
 
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   romanceMovies: romanceMoviesReducer,
   documentaries: documentaryReducer,
   movieDetail: movieDetailReducer,
+  searchMovieResult: searchMovieReducer,
 });
 
 export default rootReducer;
