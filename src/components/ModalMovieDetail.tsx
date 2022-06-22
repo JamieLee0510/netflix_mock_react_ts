@@ -7,7 +7,7 @@ type Props = {
   movie: MovieDetail;
 };
 
-export default function MadelMovieDetail({
+export default function ModalMovieDetail({
   movie: {
     title,
     name,
