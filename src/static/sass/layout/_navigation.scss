@@ -92,9 +92,9 @@
       fill: #fff;
       height: 1rem;
       width: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
 
       @include responsive(tab_port) {
         height: 1.5rem;

@@ -8,6 +8,7 @@ import NetflixLogo from "../../static/images/Netflix_Logo_RGB.png";
 import BellLogo from "../../static/images/bell-logo.svg";
 import DropdownArrow from "../../static/images/drop-down-arrow.svg";
 import DropdownContent from "../DropdownContent";
+import { useScroll } from "../../hooks/useScroll";
 
 type Props = {};
 
@@ -15,10 +16,11 @@ const Navbar: React.FC = () => {
   const searchInput = React.useRef(null);
   const [userInput, setUserInput] = useState("");
   const navigate = useNavigate();
-  //   const [scrollDimensions] = useScroll()
-  //   const { scrollY } = scrollDimensions
+  const [scrollDimensions] = useScroll();
+  const { scrollY } = scrollDimensions;
 
   const onChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("input:", event.target.value);
     setUserInput(event.target.value);
   };
 
@@ -29,7 +31,9 @@ const Navbar: React.FC = () => {
     ) {
       navigate("/browse");
     }
-    if (userInput.length > 0) navigate(`/search?q=${userInput}`);
+    if (userInput.length > 0) {
+      navigate(`/search?q=${userInput}`);
+    }
   }, [userInput, searchInput]);
 
   const onLogoClick = () => {
@@ -46,9 +50,9 @@ const Navbar: React.FC = () => {
             alt=""
           />
         </NavLink>
-        {/* <div className="navigation__container--downArrow-2">
+        <div className="navigation__container--downArrow-2">
           <DropdownArrow />
-        </div> */}
+        </div>
 
         <div className="navigation__container-link pseudo-link">Home</div>
         <div className="navigation__container-link pseudo-link">TV Shows</div>
