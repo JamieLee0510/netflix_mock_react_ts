@@ -15,7 +15,7 @@ import "./static/sass/style.scss";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
-const store = createStore(reducers, applyMiddleware(ReduxThunk));
+export const store = createStore(reducers, applyMiddleware(ReduxThunk));
 
 root.render(
   <Provider store={store}>
