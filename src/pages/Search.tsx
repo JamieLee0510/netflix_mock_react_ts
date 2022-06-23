@@ -52,7 +52,7 @@ export default function Search({}: Props) {
               const movieImageUrl =
                 "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
               return (
-                <div className="movie">
+                <div className="movie" key={movie.id}>
                   <div
                     onClick={() => onSelectMovieHandler(movie)}
                     className="movie__column-poster"
@@ -92,5 +92,13 @@ export default function Search({}: Props) {
     );
   };
 
-  return !isLoading ? renderSearchResults() : <h1>Loading...</h1>;
+  const loading = () => {
+    return (
+      <div className="searchContent">
+        <h1>Loading...</h1>;
+      </div>
+    );
+  };
+
+  return !isLoading ? renderSearchResults() : loading();
 }
