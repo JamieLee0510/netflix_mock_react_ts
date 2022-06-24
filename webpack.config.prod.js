@@ -90,17 +90,12 @@ module.exports = () => {
       
         ],
       },
-      devServer: {
-        hot: true, // enable HMR on the server
-        historyApiFallback: true,
-        port:8081,
-      },
       node: {
         global: true,
       },
       plugins: [
       //  new webpack.DefinePlugin(envKeys),
-      new Dotenv(),
+      new Dotenv( {systemvars: true}),
         new HtmlWebPackPlugin({
           template: './src/public/index.html',
           filename: './index.html',
