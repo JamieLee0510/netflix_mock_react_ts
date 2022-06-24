@@ -21,12 +21,18 @@ const Home: React.FC = () => {
   const closeModal = () => {
     setToggleModal(false);
   };
+
+  const testEnv = () => {
+    console.log("env.API_KEY:", process.env.API_KEY);
+  };
   return (
     <>
       <div className="main-content">
         <MainContent selectMovieHandler={selectMovieHandler} />
       </div>
-
+      <div>
+        <button onClick={testEnv}>test env</button>
+      </div>
       {(movieDetails.backdrop_path != null ||
         movieDetails.poster_path != null) && (
         <Modal
