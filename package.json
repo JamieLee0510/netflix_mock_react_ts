@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --config webpack.dev.js --open",
+    "dev": "webpack-dev-server --mode development --config webpack.config.js --open",
     "build": "npm run clean && webpack --config webpack.config.js",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll",

@@ -100,7 +100,7 @@ module.exports = () => {
       },
       plugins: [
       //  new webpack.DefinePlugin(envKeys),
-      new Dotenv({path:'./.env'}),
+      new Dotenv(),
         new HtmlWebPackPlugin({
           template: './src/public/index.html',
           filename: './index.html',
