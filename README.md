@@ -9,6 +9,7 @@ The project was a simplified front end clone of Netflix. It was created with Rea
 - Redux & React
 - Typescript
 - Webpack
+- i18next
 - Axios
 - Sass (grid & flexbox)
 - Media queries
