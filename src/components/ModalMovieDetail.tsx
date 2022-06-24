@@ -2,7 +2,7 @@ import React from "react";
 import { MovieDetail } from "../model/movie";
 import AddIcon from "../static/images/add.svg";
 import PlayIcon from "../static/images/play-button.svg";
-
+import { t } from "i18next";
 type Props = {
   movie: MovieDetail;
 };

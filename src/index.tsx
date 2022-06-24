@@ -3,9 +3,11 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { legacy_createStore as createStore, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
-import reducers from "./store/reducers";
 
+import reducers from "./store/reducers";
 import AppRouter from "./pages/AppRouter";
+import "./utils/i18n/i18n";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";

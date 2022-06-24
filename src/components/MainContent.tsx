@@ -12,6 +12,7 @@ import { HorrorMoviesState } from "../store/horrorMovies/horrorMoviesReducer";
 import { RomanceMoviesState } from "../store/romanceMovies/romanceMoviesReducer";
 import { DocumentaryState } from "../store/documentary/documentaryReducer";
 import { MovieDetailState } from "../store/movieDetail/movieDetailReducer";
+import { t } from "i18next";
 
 type Props = {
   selectMovieHandler: Function;
@@ -60,37 +61,37 @@ export default function MainContent({ selectMovieHandler }: Props) {
 
       <div className="movieShowcase">
         <DisplayMovieRow
-          title="Trending"
+          title={t("category.trending")}
           selectMovieHandler={selectMovieHandler}
           movies={trending.movies}
         />
         <DisplayMovieRow
-          title="Top Rated"
+          title={t("category.topRated")}
           selectMovieHandler={selectMovieHandler}
           movies={topRated.movies}
         />
         <DisplayMovieRow
-          title="Action Movies"
+          title={t("category.actionMovies")}
           selectMovieHandler={selectMovieHandler}
           movies={actMovies.movies}
         />
         <DisplayMovieRow
-          title="Comedy"
+          title={t("category.comedy")}
           selectMovieHandler={selectMovieHandler}
           movies={comedyMovies.movies}
         />
         <DisplayMovieRow
-          title="Horror Movies"
+          title={t("category.horrorMovie")}
           selectMovieHandler={selectMovieHandler}
           movies={horrorMovies.movies}
         />
         <DisplayMovieRow
-          title="Romance"
+          title={t("category.romance")}
           selectMovieHandler={selectMovieHandler}
           movies={romanceMovies.movies}
         />
         <DisplayMovieRow
-          title="Documentaries"
+          title={t("category.documentaries")}
           selectMovieHandler={selectMovieHandler}
           movies={documentaries.movies}
         />
