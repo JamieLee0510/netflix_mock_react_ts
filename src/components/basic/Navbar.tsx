@@ -9,6 +9,8 @@ import BellLogo from "../../static/images/bell-logo.svg";
 import DropdownArrow from "../../static/images/drop-down-arrow.svg";
 import DropdownContent from "../DropdownContent";
 import { useScroll } from "../../hooks/useScroll";
+import { useTranslation } from "react-i18next";
+import LanguageDropDown from "../LanguageDropDown";
 
 type Props = {};
 
@@ -18,7 +20,7 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [scrollDimensions] = useScroll();
   const { scrollY } = scrollDimensions;
-
+  const { t } = useTranslation();
   const onChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log("input:", event.target.value);
     setUserInput(event.target.value);
@@ -54,13 +56,21 @@ const Navbar: React.FC = () => {
           <DropdownArrow />
         </div> */}
 
-        <div className="navigation__container-link pseudo-link">Home</div>
-        <div className="navigation__container-link pseudo-link">TV Shows</div>
-        <div className="navigation__container-link pseudo-link">Movies</div>
         <div className="navigation__container-link pseudo-link">
-          Recently Added
+          {t("header.home")}
         </div>
-        <div className="navigation__container-link pseudo-link">My List</div>
+        <div className="navigation__container-link pseudo-link">
+          {t("header.tvShows")}
+        </div>
+        <div className="navigation__container-link pseudo-link">
+          {t("header.movies")}
+        </div>
+        <div className="navigation__container-link pseudo-link">
+          {t("header.recentAdd")}
+        </div>
+        <div className="navigation__container-link pseudo-link">
+          {t("header.myList")}
+        </div>
 
         <div className="navigation__container--left">
           <div className="logo">
@@ -77,7 +87,10 @@ const Navbar: React.FC = () => {
           />
         </div>
 
-        <div className="navigation__container-link pseudo-link">KIDS</div>
+        <div className="navigation__container-link pseudo-link">
+          {" "}
+          {t("header.kid")}
+        </div>
         <div className="navigation__container-link pseudo-link">DVD</div>
         <div className="navigation__container--bellLogo">
           <BellLogo />
@@ -85,6 +98,10 @@ const Navbar: React.FC = () => {
 
         <DropdownContent />
         <div className="navigation__container--downArrow">
+          <DropdownArrow />
+        </div>
+        <LanguageDropDown />
+        <div className="navigation__container--downArrow-3">
           <DropdownArrow />
         </div>
       </ul>
