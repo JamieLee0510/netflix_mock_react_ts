@@ -7,6 +7,15 @@ const zhTW = {
     myList: "我的清單",
     kid: "兒童專區",
   },
-  hello: "你好",
+  category: {
+    trending: "最新上映",
+    topRated: "排行榜",
+    actionMovies: "動作片",
+    comedy: "喜劇片",
+    horrorMovie: "恐怖片",
+    romance: "愛情片",
+    documentaries: "紀錄片",
+  },
+  searchPlaceHolder: "標題、類型、人物",
 };
 export default zhTW;

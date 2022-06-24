@@ -12,7 +12,7 @@ type Props = {};
 const Home: React.FC = () => {
   const [toggleModal, setToggleModal] = useState(false);
   const [movieDetails, setMovieDetails] = useState({} as MovieDetail);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const selectMovieHandler = async (movie: MovieDetail) => {
     setToggleModal(true);
     setMovieDetails(movie);

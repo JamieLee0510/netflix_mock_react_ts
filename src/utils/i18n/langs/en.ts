@@ -7,7 +7,16 @@ const en: object = {
     myList: "My List",
     kid: "KIDS",
   },
-  hello: "Hello",
+  category: {
+    trending: "Trending",
+    topRated: "Top Rated",
+    actionMovies: "Action Movies",
+    comedy: "Comedy",
+    horrorMovie: "Horror Movie",
+    romance: "Romance",
+    documentaries: "Documentaries",
+  },
+  searchPlaceHolder: "Title, genres, people",
 };
 
 export default en;

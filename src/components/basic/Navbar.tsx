@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             onChange={(event) => onChange(event)}
             className="navigation__container--left__input"
             type="text"
-            placeholder="Title, genres, people"
+            placeholder={t("searchPlaceHolder")}
           />
         </div>
 
