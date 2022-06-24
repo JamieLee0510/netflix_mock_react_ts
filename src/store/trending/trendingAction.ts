@@ -18,7 +18,7 @@ export function fetchTrending(): ThunkAction<
   return async (dispatch) => {
     try {
       const response = await request.get(
-        `/trending/all/week?api_key=${process.env.API_KEY}&language=en-US`
+        `/trending/all/week?api_key=${process.env.API_KEY}&language=zh-TW`
       );
       return dispatch({
         type: ActionTypes.FETCH_TRENDING,

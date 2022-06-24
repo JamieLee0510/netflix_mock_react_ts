@@ -50,9 +50,9 @@ const Navbar: React.FC = () => {
             alt=""
           />
         </NavLink>
-        <div className="navigation__container--downArrow-2">
+        {/* <div className="navigation__container--downArrow-2">
           <DropdownArrow />
-        </div>
+        </div> */}
 
         <div className="navigation__container-link pseudo-link">Home</div>
         <div className="navigation__container-link pseudo-link">TV Shows</div>
