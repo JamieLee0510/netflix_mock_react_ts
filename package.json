@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --config webpack.config.js --open",
-    "build": "npm run clean && webpack -p --config webpack.config.js --display-error-details",
+    "build": "webpack -p --config webpack.config.js --display-error-details",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
