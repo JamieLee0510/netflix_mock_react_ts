@@ -12,7 +12,7 @@ import { HorrorMoviesState } from "../store/horrorMovies/horrorMoviesReducer";
 import { RomanceMoviesState } from "../store/romanceMovies/romanceMoviesReducer";
 import { DocumentaryState } from "../store/documentary/documentaryReducer";
 import { MovieDetailState } from "../store/movieDetail/movieDetailReducer";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   selectMovieHandler: Function;
@@ -43,6 +43,9 @@ export default function MainContent({ selectMovieHandler }: Props) {
   const documentaries = useSelector<RootState, DocumentaryState>(
     (state) => state.documentaries
   );
+
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(movieActions.fetchMovieDetails("tv", "63351"));
@@ -53,7 +56,7 @@ export default function MainContent({ selectMovieHandler }: Props) {
     dispatch(movieActions.fetchHorrorMovies());
     dispatch(movieActions.fetchRomanceMovies());
     dispatch(movieActions.fetchDocumentaries());
-  }, [dispatch]);
+  }, [dispatch, t]);
 
   return (
     <div className="container">

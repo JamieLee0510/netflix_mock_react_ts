@@ -3,6 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { ActionTypes } from "../actions/actionTypes";
 import { RootState } from "../rootStore";
 import { AxiosAction, MovieDetailResponse } from "../actions/types";
+import { langChecker } from "../../utils/helper";
 
 export type MovieDetailActionType =
   | MovieDetailFetching
@@ -35,13 +36,17 @@ export const fetchMovieDetails = (
       dispatch({ type: ActionTypes.FETCH_MOVIE_DETAILS });
       let urlPath;
       if (mediaType === media_type.movie) {
-        urlPath = `/movie/${mediaId}?api_key=${process.env.API_KEY}`;
+        urlPath = `/movie/${mediaId}?api_key=${
+          process.env.API_KEY
+        }&language=${langChecker()}`;
       } else {
-        urlPath = `/tv/${mediaId}?api_key=${process.env.API_KEY}`;
+        urlPath = `/tv/${mediaId}?api_key=${
+          process.env.API_KEY
+        }&language=${langChecker()}`;
       }
 
       const response = await request.get(urlPath);
-      console.log("movie detail:", response);
+      // console.log("movie detail:", response);
       return dispatch({
         type: ActionTypes.FETCH_MOVIE_DETAILS_SUCCESS,
         payload: response,

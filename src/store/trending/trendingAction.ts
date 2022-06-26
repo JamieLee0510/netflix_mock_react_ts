@@ -3,6 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { RootState } from "../rootStore";
 import { ActionTypes } from "../actions/actionTypes";
 import { AxiosAction, MovieResponse } from "../actions/types";
+import { langChecker } from "../../utils/helper";
 
 export type TrendingActionType = AxiosAction<
   typeof ActionTypes.FETCH_TRENDING,
@@ -18,7 +19,9 @@ export function fetchTrending(): ThunkAction<
   return async (dispatch) => {
     try {
       const response = await request.get(
-        `/trending/all/week?api_key=${process.env.API_KEY}&language=zh-TW`
+        `/trending/all/week?api_key=${
+          process.env.API_KEY
+        }&language=${langChecker()}`
       );
       return dispatch({
         type: ActionTypes.FETCH_TRENDING,

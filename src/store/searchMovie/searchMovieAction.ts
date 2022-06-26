@@ -3,6 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { ActionTypes } from "../actions/actionTypes";
 import { RootState } from "../rootStore";
 import { AxiosAction, MovieResponse, SearchResponse } from "../actions/types";
+import { langChecker } from "../../utils/helper";
 
 export type SearchMovieActionType =
   | SearchMovieAction
@@ -29,7 +30,9 @@ export const fetchSearchMovie = (
     try {
       dispatch({ type: ActionTypes.FETCH_SEARCH_MOVIE });
       const response = await request.get(
-        `/search/multi?api_key=${process.env.API_KEY}&language=en-US&include_adult=false&query=${searchTerm}`
+        `/search/multi?api_key=${
+          process.env.API_KEY
+        }&language=${langChecker()}&include_adult=false&query=${searchTerm}`
       );
       dispatch({
         type: ActionTypes.FETCH_SEARCH_MOVIE_SUCCESS,
