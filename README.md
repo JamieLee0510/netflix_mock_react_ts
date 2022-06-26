@@ -19,6 +19,13 @@ The project was a simplified front end clone of Netflix. It was created with Rea
 - Media queries
 - Swiper JS
 
+### Runing Project Locally
+
+- Install dependencies: run `npm install` in root project
+- Get API key from [here](https://www.themoviedb.org/documentation/api)
+- Create .env file in root project and add: `API_KEY=YOUR_API_KEY_HERE`
+- Run project: `npm run dev`
+
 ### Todo
 
 - Unit test
