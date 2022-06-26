@@ -3,6 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { ActionTypes } from "../actions/actionTypes";
 import { RootState } from "../rootStore";
 import { AxiosAction, MovieResponse } from "../actions/types";
+import { langChecker } from "../../utils/helper";
 
 export type ActMoviesActionType = AxiosAction<
   typeof ActionTypes.FETCH_ACTION_MOVIES,
@@ -18,7 +19,9 @@ export const fetchActionMovies = (): ThunkAction<
   return async (dispatch) => {
     try {
       const response = await request.get(
-        `/discover/movie?api_key=${process.env.API_KEY}&with_genres=28`
+        `/discover/movie?api_key=${
+          process.env.API_KEY
+        }&with_genres=28&language=${langChecker()}`
       );
       return dispatch({
         type: ActionTypes.FETCH_ACTION_MOVIES,
